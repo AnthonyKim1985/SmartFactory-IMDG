@@ -1,0 +1,42 @@
+group 'com.anthonykim.smartfactory'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'application'
+
+mainClassName = 'com.anthonykim.smartfactory.server.Server'
+version = getVersion()
+
+sourceCompatibility = 1.8
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '3.0'
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    maven {
+        url "https://repo1.maven.org/maven2/"
+    }
+}
+
+jar {
+    zip64 true
+
+    archiveName 'SmartFactoryIMDG-1.0.0.jar'
+    dependsOn configurations.runtime
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    exclude 'META-INF/*.RSA', 'META-INF/*.SF', 'META-INF/*.DSA'
+    manifest {
+        attributes 'Title': 'SmartFactoryIMDG', 'Version': version, 'Main-Class': mainClassName
+    }
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+
+    // Hazelcast
+    compile group: 'com.hazelcast', name: 'hazelcast', version: '3.3.2'
+    compile group: 'com.hazelcast', name: 'hazelcast-client', version: '3.3.2'
+}
