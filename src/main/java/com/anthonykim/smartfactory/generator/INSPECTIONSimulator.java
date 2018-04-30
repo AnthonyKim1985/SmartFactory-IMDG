@@ -10,15 +10,14 @@ import java.util.Date;
 import java.util.Iterator;
 import java.util.Random;
 
+import com.anthonykim.smartfactory.imdg.db.ConnectionManager;
+import com.anthonykim.smartfactory.imdg.db.MySQLConnectionManager;
+import com.anthonykim.smartfactory.imdg.hazelcast.SmartFactoryIMDG;
+import com.anthonykim.smartfactory.imdg.table.INSPECTION;
 import com.hazelcast.client.HazelcastClient;
 import com.hazelcast.client.config.ClientConfig;
 import com.hazelcast.core.HazelcastInstance;
 import com.hazelcast.core.MultiMap;
-import com.smartfactory.imdg.db.ConnectionManager;
-import com.smartfactory.imdg.db.MySQLConnectionManager;
-import com.smartfactory.imdg.hazelcast.SmartFactoryIMDG;
-import com.smartfactory.imdg.table.CNC;
-import com.smartfactory.imdg.table.INSPECTION;
 
 public class INSPECTIONSimulator implements Runnable {
 	private int writeMode;

@@ -1,14 +1,9 @@
 package com.anthonykim.smartfactory.imdg.hazelcast;
 
+import com.anthonykim.smartfactory.imdg.table.*;
 import com.hazelcast.core.HazelcastInstance;
 import com.hazelcast.core.IMap;
 import com.hazelcast.core.MultiMap;
-import com.smartfactory.imdg.table.CLEAN;
-import com.smartfactory.imdg.table.CNC;
-import com.smartfactory.imdg.table.HEAT;
-import com.smartfactory.imdg.table.INSPECTION;
-import com.smartfactory.imdg.table.POLISH;
-import com.smartfactory.imdg.table.RACK;
 
 public class IMDGIndexTable {
 	// DN_1_01 : CNC 01

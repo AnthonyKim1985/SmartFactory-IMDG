@@ -1,6 +1,6 @@
 package com.anthonykim.smartfactory.generator;
 
-import com.smartfactory.imdg.hazelcast.SmartFactoryIMDG;
+import com.anthonykim.smartfactory.imdg.hazelcast.SmartFactoryIMDG;
 
 public class CNCDriver {
 	public static void main(String[] args) {
